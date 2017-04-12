@@ -1,0 +1,15 @@
+19:59:35 **** Incremental Build of configuration Debug for project IFthisworks ****
+make all 
+make: Nothing to be done for 'all'.
+19:59:37 **** Incremental Build of configuration Debug for project IFthisworks ****
+make all 
+Building file: ../src/IFthisworks.c
+Invoking: GCC C Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -fopenmp -MMD -MP -MF"src/IFthisworks.d" -MT"src/IFthisworks.d" -o "src/IFthisworks.o" "../src/IFthisworks.c"
+Finished building: ../src/IFthisworks.c
+ 
+Building target: IFthisworks
+Invoking: GCC C Linker
+gcc -fopenmp -o "IFthisworks"  ./src/IFthisworks.o   -lm
+Finished building target: IFthisworks
+ 
