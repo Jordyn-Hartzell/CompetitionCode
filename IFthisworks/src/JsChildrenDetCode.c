@@ -118,10 +118,16 @@ void makeUpperTriangularFunction ()
 void readDataFromDotBinIntoMatrix ()
 {
 
+
 	// use malloc to assign array
 	arrayPointer = (double *)malloc(ARRAYSIZE * ARRAYSIZE * sizeof(double));
+	// here, our array pointer is called arrayPointer.
+	// our type is double.
+	// our size is number of rows times the number of columns times the size of doubles.
+	// we have ARRAYSIZE because we will always use a square matrix.
 
-	// assign 0's to array
+
+	// set the array to zeros
 	for(int rowCounter = 0; rowCounter <ARRAYSIZE; rowCounter++)
 	{
 		for(int columnCounter = 0; columnCounter < ARRAYSIZE; columnCounter++)
@@ -135,13 +141,19 @@ void readDataFromDotBinIntoMatrix ()
 		}
 	}
 
-	// open file
-	//sprintf(inputDataFileName,FileNameString);
-	
-	//printf("Reading array file %s of size %dx%d\n",inputDataFileName,ARRAYSIZE,ARRAYSIZE);
-	// open file
-	FILE *inputDataFile=fopen(inputDataFileName,"rb");
+	// read in array to pointer memory allocated space full of zeros.
 
+	//char inputDataFileName[50];
+
+	// open file
+	//sprintf(inputDataFileName,"m0016x0016.bin");
+	
+	//sprintf(inputDataFileName,"m0496x0496.bin");
+	sprintf(inputDataFileName,FileNameString);
+	
+	printf("Reading array file %s of size %dx%d\n",inputDataFileName,ARRAYSIZE,ARRAYSIZE);
+	//Open file
+	FILE *inputDataFile=fopen(inputDataFileName,"rb");
 	//Read elelements
 
 	for(int rowCounter = 0; rowCounter <ARRAYSIZE; rowCounter++)
@@ -161,7 +173,7 @@ void readDataFromDotBinIntoMatrix ()
 	// print the matrix to a csv file.
 	//printMatrix();
 
-	//printf("Finished reading array file %s of size %dx%d\n",inputDataFileName,ARRAYSIZE,ARRAYSIZE);
+	printf("Finished reading array file %s of size %dx%d\n",inputDataFileName,ARRAYSIZE,ARRAYSIZE);
 
 } /* readDataFromDotBinIntoMatrix */
 
