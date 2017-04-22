@@ -61,7 +61,7 @@ void makeUpperTriangularFunction ()
 					*(arrayPointer + rowToWorkOn * ARRAYSIZE + columnToGetZeros )
 					/ *(arrayPointer + columnToGetZeros * ARRAYSIZE + columnToGetZeros );
 
-int columnCounter = 0;			
+	int columnCounter = 0;			
 // use a pragma to initiate openMP			
 #pragma omp parallel for private(columnCounter)
 
@@ -72,10 +72,6 @@ int columnCounter = 0;
 							- rowReductionConstant *
 							*(arrayPointer + columnToGetZeros * ARRAYSIZE + columnCounter );
 			}
-
-
-
-
 		}
 	}
 
@@ -101,7 +97,6 @@ void readDataFromDotBinIntoMatrix ()
 
 	sprintf(inputDataFileName,FileNameString);
 	
-	printf("Reading array file %s of size %dx%d\n",inputDataFileName,ARRAYSIZE,ARRAYSIZE);
 	// open file
 	FILE *inputDataFile=fopen(inputDataFileName,"rb");
 
@@ -114,9 +109,7 @@ void readDataFromDotBinIntoMatrix ()
 		}
 	}
 
-	printf("Finished reading array file %s of size %dx%d\n",inputDataFileName,ARRAYSIZE,ARRAYSIZE);
-
-} // end readData
+} // end readDataFromDotBinIntoMatrix
 
 
 void multiplyDiagonalAndReturnAnswer ()
@@ -139,10 +132,6 @@ void multiplyDiagonalAndReturnAnswer ()
 	printf("Rounded to a double, this is: %e.\n",(double)diagonalMultiplierVariableLongDouble);
 	printf("Add as we go of the log of the abs of the det is %e.\n", addAsWeGoLogAbsDet);
 
-
-	
-	
-
 	return;
-} // end diagonalAnswer
+} // end multiplyDiagonalAndReturnAnswer
 
